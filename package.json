@@ -1,0 +1,24 @@
+{
+  "name": "blogify",
+  "version": "1.0.0",
+  "description": "Convert Jekyll posts to other formats for cross-publishing.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jreina/blogify.git"
+  },
+  "author": "Johnny Reina",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jreina/blogify/issues"
+  },
+  "homepage": "https://github.com/jreina/blogify#readme",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "mocha": "^3.5.3",
+    "ramda": "^0.24.1"
+  }
+}
