@@ -1,0 +1,36 @@
+---
+layout: post
+title:  "What's up with currying?"
+date:   2017-09-21 04:00:00 -0500
+categories: programming functional
+description: "Hard to get enough of, but not for everyone."
+published: true
+---
+# Lorem ipsum dolor sit amet
+## consectetur adipiscing elit
+### Phasellus aliquam sollicitudin elit at luctus
+#### Vestibulum ante ipsum primis in 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquam sollicitudin elit at luctus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin dictum suscipit lorem. Aenean dapibus, libero vitae rhoncus blandit, leo lectus sodales orci, nec lobortis augue erat facilisis sapien. Aenean fermentum blandit sem, vitae varius lacus lacinia eget. Pellentesque semper diam vitae libero consequat laoreet. Integer vel sapien purus. Etiam a odio vel justo pretium rhoncus. Ut tincidunt, eros vitae sagittis sodales, massa eros egestas mauris, in commodo augue massa et massa. Praesent eu lacus feugiat odio sagittis iaculis sit amet tincidunt ipsum. Vestibulum finibus consequat mi nec egestas. Vivamus vel libero vitae lectus iaculis ultricies sed sed tellus. Mauris posuere vehicula metus, id congue enim dapibus vel. Cras a lorem et sapien ornare porttitor. Vivamus dignissim pretium diam a tincidunt.
+<script src="https://gist.github.com/jreina/47d840b1dde2ff558afcd3e86206642f.js"></script>
+
+faucibus orci luctus et ultrices posuere cubilia Curae:
+1. Proin 
+2. dictum 
+3. suscipit 
+4. lorem
+
+<script src="https://gist.github.com/jreina/59bd4f74301f89e9db8e91454d68abb5.js"></script>
+Here we see the `values` function being declared as a curried function. It takes an array of strings which represent keys of an object, and an actual object, and returns the values corresponding to the given keys from the provided object. In its most simple form, values could be called like so: `values(['a'])({ a: 'hello' })` and it would return `['hello']`. So how is this useful to us? On line number 8, we apply an array of strings to values and assign the resulting function to a variable called `getNameAndDepartment`. As we see on line number 9, this new variable is a fully-callable function. We pass in the first value in the `courses` array and as expected, we get back the `name` and `department` values from this object. Here comes the cool part. Since `getNameAndDepartment` is a callable function and has some of the body pre-filled, we can map over the entire courses array and use the `getNameAndDepartment` function as seen on line 12.  
+
+![consequat sapien et](/public/consequat_sapien_et.gif)  
+[Suspendisse eget felis at risus ornare egestas](http://www.lipsum.com)
+
+
+| blandit | sem | vitae |
+| -- | -- | -- |
+| varius | lacus | lacinia |
+| eget | Pellentesque | semper |
+| diam | vitae | libero |
+| Integer | vel | sapien |
+| purus | Etiam | a |
+| odio | vel | justo |
