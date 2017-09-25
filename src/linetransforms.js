@@ -10,10 +10,9 @@ const lineToLineTransforms = {
     return newTag;
   },
   replaceMarkdownHeading: line => {
-    let pattern = patterns.markdown.heading;
-    let matches = pattern.exec(line).slice(1);
-    let headingLevel = matches.filter(match => match === "#").length;
-    let content = matches[matches.length - 1];
+    if (!patterns.markdown.heading.test(line)) return line;
+    let [, headingTag, content] = patterns.markdown.heading.exec(line);
+    let headingLevel = headingTag.trim().length;
     return templates.html.heading(headingLevel)(content);
   }
 };
