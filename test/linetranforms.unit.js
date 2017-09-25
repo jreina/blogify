@@ -4,7 +4,9 @@ const linetransforms = require("../src/linetransforms.js");
 
 describe("linetransforms", function() {
   describe("#replaceGistScriptWithLiquid()", function() {
-    it("should produce the correct output for the TPD preset", function(done) {
+    it("should replace an HTML script element with a Liquid Gist tag.", function(
+      done
+    ) {
       const expected = "{% gist https://gist.github.com/examplegist %}";
       const input =
         '<script src="https://gist.github.com/examplegist"></script>';
@@ -15,7 +17,9 @@ describe("linetransforms", function() {
   });
 
   describe("#replaceMarkdownHeading()", function() {
-    it("should produce the correct output for the TPD preset", function(done) {
+    it("should replace first-level markdown heading with an h1.", function(
+      done
+    ) {
       const expected = "<h1>Hello, world!</h1>";
       const input = "# Hello, world!";
       const actual = linetransforms.replaceMarkdownHeading(input);
