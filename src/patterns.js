@@ -3,7 +3,7 @@ const patterns = {
     script: /<script src="(.*?)"><\/script>/g
   },
   markdown: {
-    heading: /^(#){1,}(.*?)$/g,
+    heading: /^(#){1,} (.*?)$/g,
     image: /!\[(.*?)\]\((.*?)\)/g,
     link: /\[(.*?)\]\((.*?)\)/g
   }
