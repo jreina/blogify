@@ -26,8 +26,7 @@ describe("linetransforms", function() {
       assert.equal(actual, expected);
       done();
     });
-  });
-  describe("#replaceMarkdownHeading()", function() {
+
     it("should replace second-level markdown heading with an h2.", function(
       done
     ) {
@@ -37,8 +36,7 @@ describe("linetransforms", function() {
       assert.equal(actual, expected);
       done();
     });
-  });
-  describe("#replaceMarkdownHeading()", function() {
+
     it("should replace third-level markdown heading with an h3.", function(
       done
     ) {
@@ -48,8 +46,7 @@ describe("linetransforms", function() {
       assert.equal(actual, expected);
       done();
     });
-  });
-  describe("#replaceMarkdownHeading()", function() {
+
     it("should replace fourth-level markdown heading with an h4.", function(
       done
     ) {
