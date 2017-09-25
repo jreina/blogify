@@ -27,4 +27,37 @@ describe("linetransforms", function() {
       done();
     });
   });
+  describe("#replaceMarkdownHeading()", function() {
+    it("should replace second-level markdown heading with an h2.", function(
+      done
+    ) {
+      const expected = "<h2>Hello, world!</h2>";
+      const input = "## Hello, world!";
+      const actual = linetransforms.replaceMarkdownHeading(input);
+      assert.equal(actual, expected);
+      done();
+    });
+  });
+  describe("#replaceMarkdownHeading()", function() {
+    it("should replace third-level markdown heading with an h3.", function(
+      done
+    ) {
+      const expected = "<h3>Hello, world!</h3>";
+      const input = "### Hello, world!";
+      const actual = linetransforms.replaceMarkdownHeading(input);
+      assert.equal(actual, expected);
+      done();
+    });
+  });
+  describe("#replaceMarkdownHeading()", function() {
+    it("should replace fourth-level markdown heading with an h4.", function(
+      done
+    ) {
+      const expected = "<h4>Hello, world!</h4>";
+      const input = "#### Hello, world!";
+      const actual = linetransforms.replaceMarkdownHeading(input);
+      assert.equal(actual, expected);
+      done();
+    });
+  });
 });
