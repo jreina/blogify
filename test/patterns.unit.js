@@ -71,5 +71,20 @@ describe("patterns", function() {
         done();
       });
     });
+
+    describe("#image", function() {
+      it("should match an image tag.", function(done) {
+        const input =
+          '![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")';
+        assert.equal(patterns.markdown.image.test(input), true);
+        done();
+      });
+
+      it("should ignore a link tag.", function(done) {
+        const input = "[This is a link](https://example.com)";
+        assert.equal(patterns.markdown.image.test(input), false);
+        done();
+      });
+    });
   });
 });
